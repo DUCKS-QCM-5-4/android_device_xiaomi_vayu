@@ -24,14 +24,6 @@ blob_fixups: blob_fixups_user_type = {
             b'/sys/class/dual_role_usb/otg_default/data_role\x00',
             b'/sys/class/typec/port0/data_role\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
         ),
-    'vendor/lib/hw/audio.primary.vayu.so': blob_fixup()
-        .binary_regex_replace(
-            b'/vendor/lib/liba2dpoffload.so',
-            b'liba2dpoffload_vayu.so\x00\x00\x00\x00\x00\x00\x00',
-        )
-        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
-    'vendor/lib/libaudioroute_ext.so': blob_fixup()
-        .replace_needed('libaudioroute.so', 'libaudioroute-v34.so'),
     (
         'vendor/lib64/libalLDC.so',
         'vendor/lib64/libalAILDC.so',
