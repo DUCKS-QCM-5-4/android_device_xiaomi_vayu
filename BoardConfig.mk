@@ -12,6 +12,9 @@ DEVICE_PATH := device/xiaomi/vayu
 # Assert
 TARGET_OTA_ASSERT_DEVICE := vayu,bhima
 
+# Audio
+AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 
