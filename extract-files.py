@@ -45,7 +45,7 @@ blob_fixups: blob_fixups_user_type = {
 
 namespace_imports = [
     'hardware/qcom-caf/common/libqti-perfd-client',
-    'hardware/qcom-caf/sm8250',
+    'hardware/qcom-caf/sm8350',
     'hardware/xiaomi',
     'vendor/qcom/opensource/display',
     'vendor/xiaomi/sm8150-common',
