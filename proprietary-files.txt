@@ -280,7 +280,7 @@ vendor/etc/init/init.batterysecret.rc
 # Fingerprint
 vendor/lib64/hw/fingerprint.fpc.so:vendor/lib64/hw/fingerprint.fpc.default.so;FIX_SONAME
 vendor/lib64/hw/fingerprint.goodix.so:vendor/lib64/hw/fingerprint.goodix.default.so;FIX_SONAME
-vendor/lib64/libgf_ca.so
+vendor/lib64/libgf_ca.so|6767d8e3b3b7e7eabefb891fbc52c850aa6dc340
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
 
