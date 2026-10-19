@@ -23,6 +23,10 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(
             b'/sys/class/dual_role_usb/otg_default/data_role\x00',
             b'/sys/class/typec/port0/data_role\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00',
+        )
+        .binary_regex_replace(
+            b'/sys/class/power_supply/usb/real_type',
+            b'/sys/class/power_supply/usb/real_fake',
         ),
     (
         'vendor/lib64/libalLDC.so',
