@@ -1,4 +1,5 @@
 # Unpinned blobs from vayu_global-user 13 RKQ1.200826.002 V14.0.3.0.TJUMIXM release-keys
+# XQ-DC54: Customized_EU-UK_68.2.A.3.107.
 
 # ACDB
 vendor/etc/acdbdata/Forte/Forte_Bluetooth_cal.acdb
@@ -288,13 +289,15 @@ vendor/lib64/libgoodixhwfingerprint.so
 vendor/firmware/a612_rgmu.bin
 vendor/firmware/a618_gmu.bin
 vendor/firmware/a630_gmu.bin
-vendor/firmware/a630_sqe.fw
 vendor/firmware/a640_gmu.bin
 vendor/firmware/a640_zap.b00
 vendor/firmware/a640_zap.b01
 vendor/firmware/a640_zap.b02
 vendor/firmware/a640_zap.elf
 vendor/firmware/a640_zap.mdt
+
+# Graphics (Adreno firmware) - from XQ-DC54
+vendor/firmware/a630_sqe.fw|3e38a62bdb02bd3db36ff0350bf3fd840324b3ad
 
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
