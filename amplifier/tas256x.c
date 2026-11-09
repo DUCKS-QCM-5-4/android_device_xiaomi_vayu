@@ -99,7 +99,17 @@ static bool tas256x_is_speaker(uint32_t device) {
         case SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES:
         case SND_DEVICE_OUT_SPEAKER_AND_LINE:
         case SND_DEVICE_OUT_SPEAKER_REVERSE:
+        case SND_DEVICE_OUT_SPEAKER_VBAT:
+        case SND_DEVICE_OUT_SPEAKER_SAFE:
         case SND_DEVICE_OUT_VOICE_SPEAKER:
+        case SND_DEVICE_OUT_VOICE_SPEAKER_STEREO:
+        case SND_DEVICE_OUT_VOICE_SPEAKER_VBAT:
+        case SND_DEVICE_OUT_VOICE_SPEAKER_HFP:
+        case SND_DEVICE_OUT_SPEAKER_PROTECTED:
+        case SND_DEVICE_OUT_VOICE_SPEAKER_PROTECTED:
+        case SND_DEVICE_OUT_VOICE_SPEAKER_STEREO_PROTECTED:
+        case SND_DEVICE_OUT_SPEAKER_WSA:
+        case SND_DEVICE_OUT_VOIP_SPEAKER:
         case SND_DEVICE_OUT_VOICE_SPEAKER_AND_VOICE_ANC_HEADSET:
         case SND_DEVICE_OUT_VOICE_SPEAKER_AND_VOICE_HEADPHONES:
         case SND_DEVICE_OUT_VOICE_SPEAKER_2:
@@ -138,6 +148,14 @@ static int tas256x_set_mode(amplifier_device_t* device, audio_mode_t mode) {
     }
 
     ALOGI("%s: Setting profile to %s", __func__, tas256x_profile_names[tas256x->profile]);
+
+    /* from stock audio hal: set_sa_profile updated it if feedback was active
+     * apply new profile here, if feedback stream is active
+     */
+    if (tas256x->pcm && tas256x->adev && tas256x->adev->mixer) {
+        tas256x_mixer_set_enum_by_string(tas256x->adev->mixer, TAS256x_ALGO_PROFILE,
+                                        tas256x_profile_names[tas256x->profile]);
+    }
 
     return 0;
 }
